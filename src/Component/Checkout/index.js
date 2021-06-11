@@ -57,7 +57,7 @@ const Checkout = () => {
 		Ma_buudien: '1999'
 	};
 	const onSubmit = (values) => {
-		const user = {
+		const checkout = {
 			ho_ten: values.ho_ten,
 			user_name: values.user_name,
 			email: values.email,
@@ -68,9 +68,9 @@ const Checkout = () => {
 			Ma_buudien: values.Ma_buudien,
 			gio_hang: dsCart.cart.ctcart
 		};
-		console.log(user);
-		dispatch(billRequestedAction(user));
-		dispatch(billResetedAction());
+		console.log(checkout);
+		dispatch(billRequestedAction(checkout));
+		//dispatch(billResetedAction());
 	};
 	return (
 		<Layout>

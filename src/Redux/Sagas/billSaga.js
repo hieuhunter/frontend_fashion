@@ -3,10 +3,11 @@ import { billFailedAction, billSucceedAction } from '../Action/billAction';
 import { BILL_REQUESTED } from '../Constants/contant';
 import { call, put, takeLatest } from 'redux-saga/effects';
 
-async function apiBill() {
+async function apiBill(checkout) {
 	const { data } = await axios({
 		method: 'POST',
 		url: `http://127.0.0.1:8000/api/pay`,
+		data: checkout,
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
@@ -16,9 +17,10 @@ async function apiBill() {
 	return data;
 }
 
-function* Bill() {
+function* Bill(action) {
 	try {
-		const res = yield call(apiBill);
+		const {checkout} = action.payload;
+		const res = yield call(apiBill, checkout);
 		if (res.success) {
 			yield put(billSucceedAction(res.data));
 			window.location.replace('/');

@@ -1,7 +1,10 @@
 import { BILL_FAILED, BILL_REQUESTED, BILL_RESETED, BILL_SUCCEED } from '../Constants/contant';
 
-export const billRequestedAction = () => ({
-	type: BILL_REQUESTED
+export const billRequestedAction = (checkout) => ({
+	type: BILL_REQUESTED,
+	payload: {
+		checkout: checkout
+	}
 });
 export const billSucceedAction = (hoa_don) => ({
 	type: BILL_SUCCEED,
