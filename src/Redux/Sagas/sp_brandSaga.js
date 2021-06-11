@@ -9,7 +9,6 @@ import { SP_BRAND_REQUESTED } from "../Constants/contant";
 async function apisp_Brand(id) {
   const { data } = await axios({
     method: "GET",
-    url: `http://127.0.0.1:8000/api/brand/${id}`,
     url: `${process.env.REACT_APP_API_URL}/brand/${id}`,
   });
   return data;

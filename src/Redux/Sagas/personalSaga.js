@@ -9,7 +9,6 @@ import { PERSONAL_REQUESTED } from "../Constants/contant";
 async function apiPersonal(user) {
   const { data } = await axios({
     method: "GET",
-    url: "http://127.0.0.1:8000/api/personal",
     url: `${process.env.REACT_APP_API_URL}/personal`,
     data: user,
     headers: {
