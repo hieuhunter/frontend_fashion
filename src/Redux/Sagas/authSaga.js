@@ -19,7 +19,7 @@ import {
 async function apiRegister(user) {
   const { data } = await axios({
     method: "POST",
-    url: "http://127.0.0.1:8000/api/register",
+    url: `${process.env.REACT_APP_API_URL}/register`,
     data: user,
     headers: {
       Accept: "application/json",
@@ -53,7 +53,7 @@ export function* authRegisterWatcher() {
 async function apiLogin(user) {
   const { data } = await axios({
     method: "POST",
-    url: "http://127.0.0.1:8000/api/login",
+    url: `${process.env.REACT_APP_API_URL}/login`,
     data: user,
     headers: {
       Accept: "application/json",
@@ -91,7 +91,7 @@ export function* authLoginWatcher() {
 async function api_checklogin(user) {
   const { data } = await axios({
     method: "GET",
-    url: "http://127.0.0.1:8000/api/user",
+    url: `${process.env.REACT_APP_API_URL}/user`,
     data: user,
     headers: {
       Accept: "application/json",
@@ -128,6 +128,7 @@ async function api_logout(user) {
   const { data } = await axios({
     method: "GET",
     url: "http://127.0.0.1:8000/api/logout",
+    url: `${process.env.REACT_APP_API_URL}/logout`,
     data: user,
     headers: {
       Accept: "application/json",

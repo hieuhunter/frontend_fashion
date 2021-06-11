@@ -20,7 +20,7 @@ import axios from "axios";
 async function apiaddCart(gio_hang) {
   const { data } = await axios({
     method: "GET",
-    url: "http://127.0.0.1:8000/api/addCart",
+    url: `${process.env.REACT_APP_API_URL}/addCart`,
     params: gio_hang,
     headers: {
       Accept: "application/json",
@@ -49,7 +49,7 @@ export function* addCartWatcher() {
 async function apiCart() {
   const { data } = await axios({
     method: "GET",
-    url: `http://127.0.0.1:8000/api/listCart`,
+    url: `${process.env.REACT_APP_API_URL}/listCart`,
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export function* CartWatcher() {
 async function apiDeleteCart(gio_hang) {
   const { data } = await axios({
     method: "DELETE",
-    url: `http://127.0.0.1:8000/api/delete_cart`,
+    url: `${process.env.REACT_APP_API_URL}/delete_cart`,
     params: gio_hang,
     headers: {
       Accept: "application/json",
@@ -107,7 +107,7 @@ export function* xoaCartWatcher() {
 async function api_deleteallCart(gio_hang) {
   const { data } = await axios({
     method: "DELETE",
-    url: `http://127.0.0.1:8000/api/delete_all`,
+    url: `${process.env.REACT_APP_API_URL}/delete_all`,
     params: gio_hang,
     headers: {
       Accept: "application/json",
