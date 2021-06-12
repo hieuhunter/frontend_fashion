@@ -4,7 +4,7 @@ import { addcartRequestedAction, cartRequestedAction, deletecartRquestedAction }
 import Layout from '../Layout';
 import { Form, Formik } from 'formik';
 import classNames from 'classnames';
-import { billRequestedAction, billResetedAction } from '../../Redux/Action/billAction';
+import { billRequestedAction } from '../../Redux/Action/billAction';
 
 const total_price = function (arr, qty, price) {
 	return arr.reduce(function (a, b) {

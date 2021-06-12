@@ -8,6 +8,7 @@ const checkouttc = () =>
 				<img src="images/paytc.jpg" alt="Girl in a jacket" width={1600} height={600} />
 			</div>
             <div>Kiểm tra đơn hàng</div>
+            
         </Layout>
     )
 } ;
