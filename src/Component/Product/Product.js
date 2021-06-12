@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { addcartRequestedAction, cartRequestedAction } from "../../Redux/Action/cartAction";
 import { sp_categoryRequestedAction } from "../../Redux/Action/sp_categoryAction";
 import Layout from "../Layout";
 
@@ -11,6 +12,16 @@ const Product = () => {
     (state) => state.ds_category.sp_category.san_pham
   );
   let { id } = useParams();
+
+  const addToCart = (id, gia) => {
+    const gio_hang = {
+      id_sp: id,
+      so_luong: 1,
+      gia: gia,
+    };
+    dispatch(addcartRequestedAction(gio_hang));
+    dispatch(cartRequestedAction());
+  };
 
   useEffect(() => {
     dispatch(sp_categoryRequestedAction(id));
@@ -67,7 +78,7 @@ const Product = () => {
                           </h6>
                         </div>
                         <div className="img item_add">
-                          <a href="#!">
+                          <a href="#!" onClick={addToCart.bind(this, sp.id, sp.gia)}>
                             <img src="/images/ca.png" alt="abc" />
                           </a>
                         </div>
