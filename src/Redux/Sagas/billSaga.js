@@ -23,7 +23,7 @@ function* Bill(action) {
 		const res = yield call(apiBill, checkout);
 		if (res.success) {
 			yield put(billSucceedAction(res.data));
-			window.location.replace('/');
+			window.location.replace('/checkouttc');
 		}
 	} catch (err) {
 		yield put(billFailedAction(err.message));

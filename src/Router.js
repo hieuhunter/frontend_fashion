@@ -11,6 +11,7 @@ import Product_Brand from './Component/Product/Product_Brand';
 import Personal from './Component/Register&&Login/Personal';
 import Cart from './Component/Cart';
 import Checkout from './Component/Checkout';
+import checkouttc from './Component/Checkout/checkouttc';
 
 const Routes = () => {
 	return (
@@ -27,6 +28,7 @@ const Routes = () => {
 				<Route exact path="/Contact" component={Contact} />
 				<Route exact path="/Personal" component={Personal} />
 				<Route exact path="/Checkout" component={Checkout} />
+				<Route exact path="/Checkouttc" component={checkouttc} />
 			
 			</Switch>
 		</Router>

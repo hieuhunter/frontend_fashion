@@ -127,7 +127,6 @@ export function* auth_checkLoginWatcher() {
 async function api_logout(user) {
   const { data } = await axios({
     method: "GET",
-    url: "http://127.0.0.1:8000/api/logout",
     url: `${process.env.REACT_APP_API_URL}/logout`,
     data: user,
     headers: {
